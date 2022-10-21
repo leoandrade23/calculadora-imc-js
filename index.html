@@ -14,10 +14,10 @@
         <label>Nome: <input id="nome" type="text" /></label>
       </div>
       <div class="input">
-        <label>Altura (m): <input id="altura" type="number" /></label>
+        <label>Altura (m): <input id="altura" type="text" /></label>
       </div>
       <div class="input">
-        <label>Peso (kg): <input id="peso" type="number" /></label>
+        <label>Peso (kg): <input id="peso" type="text" /></label>
       </div>
       <div class="buttons">
         <button id="calc">Calcular</button>
@@ -31,6 +31,9 @@
     <script>
       IMask(document.getElementById("altura"), {
         mask: "0.00",
+      });
+      IMask(document.getElementById("peso"), {
+        mask: "000",
       });
     </script>
   </body>

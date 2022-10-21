@@ -10,7 +10,7 @@ function calculoIMC() {
   let altura = qS("#altura").value;
   let peso = qS("#peso").value;
   if (nome !== "" && altura !== "" && peso !== "") {
-    let imc = (peso / (altura ^ 2)).toFixed(2);
+    let imc = peso / (altura * altura);
     let resultado = "";
     if (imc < 18.5) {
       resultado = "Abaixo do Peso";
@@ -26,8 +26,11 @@ function calculoIMC() {
       resultado = "Obesidade Grau III ou Mórbida";
     }
     qS(".resultado").style.display = "flex";
-    qS(".resultado").innerHTML = `${nome} seu IMC é: ${imc} <br> ${resultado}`;
+    qS(".resultado").innerHTML = `${nome} seu IMC é: ${imc.toFixed(
+      2
+    )} <br> ${resultado}`;
   } else {
+    qS(".resultado").style.display = "flex";
     qS(".resultado").innerHTML = "Preencha todos os campos";
   }
 }
